@@ -42,12 +42,15 @@
             {% for photo in photo %}
             <div class="row">
               <!-- displaying News articles -->
-              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="card my-2">
                 <img
                   class="image-thumbail"
                   src="{{photo.image.url}}"
                   alt="Card image cap"
                 />
+              </div>
+              <div class="card-body">
+                <small>Category: {{ photo.category.name }}</small>
               </div>
             </div>
             {% empty %}

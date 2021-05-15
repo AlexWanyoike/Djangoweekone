@@ -23,7 +23,6 @@ class Photo(models.Model):
     location = models.ForeignKey(
         Location, on_delete=models.CASCADE  )
     
-
     image = models.ImageField(upload_to='media/')
 
     description = models.TextField()
