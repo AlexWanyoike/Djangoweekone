@@ -31,8 +31,10 @@
 
             <ul class="list-group list-group-flush">
               <li class="list-group-item">All</li>
-              <li class="list-group-item">Categories</li>
-              <li class="list-group-item">Location</li>
+              {% for category in categories %}
+                <li class="list-group-item">{{category.name}}</li>
+              {% endfor %}
+              
 
              
               <a href="{% url 'create' %}" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
