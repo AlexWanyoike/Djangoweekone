@@ -3,13 +3,13 @@ from django.conf.urls.static import static
 
 
 from django.urls import path
-from django.conf.urls import url
+
 from . import views
 
 urlpatterns = [
-    url(r'^base', views.base, name='base'),
-    url(r'^viewphoto', views.viewphoto, name='viewphoto'),
-    url(r'^create', views.create, name='create'),
+    path('', views.base, name='base'),
+    path('viewphoto/', views.viewphoto, name='viewphoto'),
+    path('create/', views.create, name='create'),
 ]
 
 if settings.DEBUG:
