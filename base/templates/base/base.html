@@ -41,15 +41,21 @@
         </div>
         <div class="col-9 col-sm-3">
           <div class="row">
-            <div class="card">
-              <img src="templates/images/pexels-pixabay-355952.jpg" class="image-thumbnail" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Details</h5>
-                <p class="card-text">Location and Category.</p>
-                <a href="#" class="btn btn-primary">View Details</a>
+
+            <div class="col-md-4">
+              <div class="card my-2">
+                  <img class="image-thumbail" src="" alt="Card image cap">
+
+                  <div class="card-body">
+                      <small>Category: {{photo.category.name}}</small>
+                  </div>
+                  <a href="{% url 'viewphoto' %}" class="btn btn-outline-dark btn-sm m-1">View</a>
               </div>
-            </div>
           </div>
+
+          </div>
+
+          
         </div>
 
 
