@@ -1,94 +1,67 @@
-{% load bootstrap3 %}
-{% load static %}
+{% load bootstrap3 %} {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
 
-  {% if title %}
-  <title>Wanyoike Profile- {{title}}</title>
-  {% else %}
-    <title> Wanyoike Profile </title>
-  {% endif %}
-
-  {% block styles %}
-    {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  {% endblock %}
-
-</head>
-<body>
+    {% if title %}
+    <title>Wanyoike Profile- {{title}}</title>
+    {% else %}
+    <title>Wanyoike Profile</title>
+    {% endif %} {% block styles %} {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% endblock %}
+  </head>
+  <body>
     {% include "navbar.html" %}
-    
+
     <div class="container">
       <div class="row">
         <div class="col-3 col-sm-3">
           <div class="card">
-
             <div class="card-header">
               <h3>Profile</h3>
-            </div>  
+            </div>
 
             <ul class="list-group list-group-flush">
               <li class="list-group-item">All</li>
               {% for category in categories %}
-                <li class="list-group-item">{{category.name}}</li>
+              <li class="list-group-item">{{category.name}}</li>
               {% endfor %}
-              
 
-             
-              <a href="{% url 'create' %}" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
-              
-              
-
-              
+              <a
+                href="{% url 'create' %}"
+                class="btn btn-dark btn-block btn-sm m-1"
+                >Add Photo</a
+              >
             </ul>
-
           </div>
-
         </div>
         <div class="col-9 col-sm-3">
           <div class="row">
-
-            {% for photo in photos %}
-            <div class="col-md-4">
-                <div class="card my-2">
-                    <img class="image-thumbail" src="{{photo.image.url}}" alt="Card image cap">
-
-                    <div class="card-body">
-                        <small>Category: {{photo.category.name}}</small>
-                    </div>
-                    <a href="{% url 'viewphoto' %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-                </div>
+            {% for photo in photo %}
+            <div class="row">
+              <!-- displaying News articles -->
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <img
+                  class="image-thumbail"
+                  src="{{photo.image.url}}"
+                  alt="Card image cap"
+                />
+              </div>
             </div>
             {% empty %}
-            <h3>No Photos To Display</h3>
+            <div class="alert alert-danger" role="alert">
+              No Image to Display
+            </div>
             {% endfor %}
-
-
-
-
-
-
-
-
-        </div>
-
           </div>
-
-          
         </div>
-
-
-
       </div>
     </div>
 
-
-
     {% block scripts %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      {% bootstrap_javascript %}
-    {% endblock %}
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %} {% endblock %}
+  </body>
 </html>
