@@ -20,13 +20,19 @@
         <div class="col-3 col-sm-3">
           <div class="card">
             <div class="card-header">
-              <h3>Profile</h3>
+              <h3>Categories</h3>
             </div>
 
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">All</li>
+              <li class="list-group-item">
+                <a href="{% url 'base' %}">All</a>
+              </li>
               {% for category in categories %}
-              <li class="list-group-item">{{category.name}}</li>
+              <li class="list-group-item">
+                <a href="{% url 'base' %}?category={{category.name}}">
+                  {{category.name}}
+                </a>
+              </li>
               {% endfor %}
 
               <a
@@ -40,7 +46,7 @@
         <div class="col-9 col-sm-3">
           <div class="row">
             {% for photo in photo %}
-            <div class="row">
+            <div class="col-md-4">
               <!-- displaying News articles -->
               <div class="card my-2">
                 <img
@@ -48,9 +54,14 @@
                   src="{{photo.image.url}}"
                   alt="Card image cap"
                 />
-              </div>
-              <div class="card-body">
-                <small>Category: {{ photo.category.name }}</small>
+                <div class="card-body">
+                  <small>Category: {{ photo.category.name }}</small>
+                </div>
+                <a
+                  href="{% url 'viewphoto' photo.id %}"
+                  class="btn btn-outline-dark btn-sm m-1"
+                  >View</a
+                >
               </div>
             </div>
             {% empty %}
