@@ -40,10 +40,12 @@
                 <div class="form-group m-3">
                   <label>Select a category</label>
                   <select name="category" class="form-control">
-                    <option value="none">Select a category...</option>
+                    <option value="none">Select a category</option>
 
                     {% for category in categories %}
-                    <option value="{{category.id}}">{{category.name}}</option>
+                    <option value="{{ category.id }}">
+                      {{ category.name }}
+                    </option>
                     {% endfor %}
                   </select>
                 </div>
@@ -64,7 +66,7 @@
                     <option value="none">Select a location</option>
 
                     {% for location in locations %}
-                    <option value="{{photo.id}}">{{photo.name}}</option>
+                    <option value="{{location.id}}">{{location.name}}</option>
                     {% endfor %}
                   </select>
                 </div>

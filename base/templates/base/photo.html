@@ -26,9 +26,11 @@
             <div class="card text-center">
               <div class="card-header">{{ photo.category.name }}</div>
               <div class="card-body">
-                <h5 class="card-title">Location: {{photo.name}}</h5>
+                <h5 class="card-title">
+                  Location Taken: {{photo.location.name}}
+                </h5>
                 <p class="card-text">
-                  {{photo.description }}
+                  Description : {{photo.description }}
                   <br />
                   <a href="{% url 'base' %}" class="btn btn-dark my-3"
                     >Home Page</a
@@ -36,7 +38,7 @@
                 </p>
               </div>
 
-              <div class="card-footer text-muted">TIME TAKEN</div>
+              <div class="card-footer text-muted">{{photo.name}}</div>
             </div>
           </div>
         </div>
