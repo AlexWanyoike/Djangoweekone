@@ -32,35 +32,35 @@ $ git clone https://github.com/AlexWanyoike/Djangoweekone.git
 
 ## Running the Application
 
-- Creating the virtual environment
+- Installation on the Application
 
-  - $ python3.6 -m venv --without-pip virtual
-  - $ source virtual/bin/env
+  - $ python3 -m venv --without-pip virtual
+  - $ source virtual/bin/activate
   - $ curl https://bootstrap.pypa.io/get-pip.py | python
-
-- Installing flask
-- $ pip install freeze
-- $ pip install -r requirements.txt
-  To run the application, in your terminal:
-- Run $ chmod a+x start.sh
-- Run $ ./start.sh
+  - $ pip3 install django
+  - $ pip3 install django-bootstrap3
+  - $ pip3 install psycopg2
+  - $ python3.9 manage.py check
+  - $ python manage.py makemigrations base
+  - $ python3.9 manage.py migrate
+  - $ python3.9 manage.py pillow
+  - $ python3.9 manage.py shell
 
 ## Testing the Application
 
 To run the tests for the class files:
 
-$ python3.9 manage.py test
+$ python3 manage.py tests
 
 ## Languages Used:
 
 This project was generated with
 
 - Python
-- CSS
+- CSS / JS
 - HTML
-- Flask
+- Django
 - Shell
-- Powershell
 
 ## Link to Deployed Site:
 
@@ -74,5 +74,7 @@ Email:
 alex.wanyoike12@gmail.com
 
 ## License and Copyright
+
+[LICENSE]()
 
 (C) Copyright 2021 Alex Wanyoike
