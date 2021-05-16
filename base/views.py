@@ -8,14 +8,25 @@ from .models import Category , Photo , Location
 def base(request):
 
     category = request.GET.get('category')
+    
     if category == None:
         photo = Photo.objects.all()
     else:
         photo = Photo.objects.filter(category__name=category)
 
     categories = Category.objects.all()
-    context = {'categories': categories, 'photo': photo}
-    return render(request, 'base/base.html', context)
+
+    location = request.GET.get('location')
+    if location == None:
+        photo = Photo.objects.all()
+    else:
+        photo = Photo.objects.filter(location__name=location)
+
+    locations = Location.objects.all()
+    
+
+    #context = {'categories': categories, 'photo': photo , 'locations': locations}
+    return render(request, 'base/base.html', {'categories': categories, 'photo': photo , 'locations': locations})
 
 def viewphoto(request, pk):
     photo = Photo.objects.get(id=pk)
@@ -26,4 +37,11 @@ def create(request):
     locations = Location.objects.all()
 
     context = {'categories': categories, 'locations': locations}
-    return render(request , 'base/create.html', context)
+    return render(request , 'base/base.html', context)
+
+
+
+
+
+
+   

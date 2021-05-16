@@ -36,6 +36,19 @@
                     >Home Page</a
                   >
                 </p>
+                <input
+                  class="form-control"
+                  id="imagelink"
+                  type="text"
+                  value="{{photo.image.url}}"
+                  id="{{photo.id}}.url"
+                />
+                <button
+                  class="btn btn-outline-success"
+                  onclick="copyFunction('{{photo.id}}.url')"
+                >
+                  Copy Link
+                </button>
               </div>
 
               <div class="card-footer text-muted">{{photo.name}}</div>

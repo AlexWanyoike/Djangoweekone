@@ -20,7 +20,7 @@
         <div class="col-3 col-sm-3">
           <div class="card">
             <div class="card-header">
-              <h3>Categories</h3>
+              <h3>Category</h3>
             </div>
 
             <ul class="list-group list-group-flush">
@@ -34,12 +34,22 @@
                 </a>
               </li>
               {% endfor %}
+            </ul>
+            <div class="card-header">
+              <h3>Locations</h3>
+            </div>
 
-              <a
-                href="{% url 'create' %}"
-                class="btn btn-dark btn-block btn-sm m-1"
-                >Add Photo</a
-              >
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <a href="{% url 'base' %}">All</a>
+              </li>
+              {% for location in locations %}
+              <li class="list-group-item">
+                <a href="{% url 'base' %}?location={{location.name}}">
+                  {{location.name}}
+                </a>
+              </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
