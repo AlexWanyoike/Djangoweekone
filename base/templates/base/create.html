@@ -27,12 +27,11 @@
                 {% csrf_token %}
 
                 <div class="form-group m-3">
-                  <label>Description</label>
-                  <input
-                    required
-                    name="description"
+                  <label>Name</label>
+                  <inputrequired
+                    name="Name"
                     type="text"
-                    placeholder="Enter a description"
+                    placeholder="Name of the Photo"
                     class="form-control"
                   />
                 </div>
@@ -82,10 +81,21 @@
                 </div>
 
                 <div class="form-group m-3">
+                  <label>Description</label>
+                  <input
+                    required
+                    name="description"
+                    type="text"
+                    placeholder="Enter a description"
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="form-group m-3">
                   <label>Upload image</label>
                   <input
                     required
-                    name="images"
+                    name="photos"
                     type="file"
                     multiple
                     class="form-control-file"
