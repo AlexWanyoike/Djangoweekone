@@ -69,7 +69,7 @@ This project was generated with
 
 ## Link to Deployed Site:
 
-< ... >
+https://wanyoikeprofile.herokuapp.com/
 
 ## Support , Bugs and Contact Details
 

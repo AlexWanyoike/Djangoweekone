@@ -12,7 +12,7 @@ def base(request):
         photo = Photo.objects.all()
     else:
         photo = Photo.objects.filter(location__name=location)
-        locations = Location.objects.all()
+    locations = Location.objects.all()
 
 
     category = request.GET.get('category')
@@ -20,7 +20,7 @@ def base(request):
         photo = Photo.objects.all()
     else:
         photo = Photo.objects.filter(category__name=category)
-        categories = Category.objects.all()
+    categories = Category.objects.all()
     
     context = {'categories': categories, 'photo': photo , 'locations': locations}
     return render(request, 'base/base.html', context)
