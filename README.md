@@ -2,7 +2,7 @@
 
 ## Description
 
-This project aims to display my aims photos based on my experience. It has the ability to create, update and delete the photo and its details.
+This project aims to display photos based on my experience. It has the ability to create, update and delete the photo and its details.
 
 ## Features
 
