@@ -11,13 +11,17 @@
     {% endif %} {% block styles %} {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     {% endblock %}
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     {% include "navbar.html" %}
 
     <div class="container">
       <div class="row">
-        <div class="col-3 col-sm-3">
+        <div class="col-1 col-sm-3">
           <div class="card">
             <div class="card-header">
               <h3>Category</h3>
@@ -53,33 +57,27 @@
             </ul>
           </div>
         </div>
-        <div class="col-9 col-sm-3">
-          <div class="row">
-            {% for photo in photo %}
-            <div class="col-md-4">
-              <!-- displaying News articles -->
-              <div class="card my-2">
-                <img
-                  class="image-thumbail"
-                  src="{{photo.image.url}}"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <small>Category: {{ photo.category.name }}</small>
+        <div class="col-11 col-sm-3">
+          {% for photo in photo %}
+          <div class="extra">
+            <div class="box row welcome text-center">
+              <div class="card">
+                <div>
+                  <img src="{{photo.image.url}}" alt="work5" />
+                  <div class="card-body">
+                    <small>Category: {{ photo.category.name }}</small>
+                  </div>
+                  <a
+                    href="{% url 'viewphoto' photo.id %}"
+                    class="btn btn-outline-info btn-sm m-1"
+                    >View</a
+                  >
                 </div>
-                <a
-                  href="{% url 'viewphoto' photo.id %}"
-                  class="btn btn-outline-dark btn-sm m-1"
-                  >View</a
-                >
               </div>
             </div>
-            {% empty %}
-            <div class="alert alert-danger" role="alert">
-              No Image to Display
-            </div>
-            {% endfor %}
           </div>
+
+          {% endfor %}
         </div>
       </div>
     </div>

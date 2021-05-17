@@ -7,14 +7,7 @@ from .models import Category , Photo , Location
 # Create your views here.
 def base(request):
 
-    category = request.GET.get('category')
     
-    if category == None:
-        photo = Photo.objects.all()
-    else:
-        photo = Photo.objects.filter(category__name=category)
-
-    categories = Category.objects.all()
 
     location = request.GET.get('location')
     if location == None:
@@ -23,10 +16,19 @@ def base(request):
         photo = Photo.objects.filter(location__name=location)
 
     locations = Location.objects.all()
+
+    category = request.GET.get('category')
+    
+    if category == None:
+        photo = Photo.objects.all()
+    else:
+        photo = Photo.objects.filter(category__name=category)
+
+    categories = Category.objects.all()
     
 
-    #context = {'categories': categories, 'photo': photo , 'locations': locations}
-    return render(request, 'base/base.html', {'categories': categories, 'photo': photo , 'locations': locations})
+    context = {'categories': categories, 'photo': photo , 'locations': locations}
+    return render(request, 'base/base.html', context)
 
 def viewphoto(request, pk):
     photo = Photo.objects.get(id=pk)

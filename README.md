@@ -1,4 +1,4 @@
-# Wanyoike Profile Picture
+# Wanyoike Profile Gallery
 
 ## Description
 
@@ -40,11 +40,16 @@ $ git clone https://github.com/AlexWanyoike/Djangoweekone.git
   - $ pip3 install django
   - $ pip3 install django-bootstrap3
   - $ pip3 install psycopg2
-  - $ python3.9 manage.py check
+  - $ pip install whitenoise
+  - $ pip install django-heroku
+  - $ pip freeze > requirements.txt
+  - $ pip install python-decouple
+  - $ pip install dj-database-url
+  - $ python3.8 manage.py check
   - $ python manage.py makemigrations base
-  - $ python3.9 manage.py migrate
-  - $ python3.9 manage.py pillow
-  - $ python3.9 manage.py shell
+  - $ python3.8 manage.py migrate
+  - $ python3.8 manage.py pillow
+  - $ python3.8 manage.py shell
 
 ## Testing the Application
 
@@ -75,6 +80,6 @@ alex.wanyoike12@gmail.com
 
 ## License and Copyright
 
-[LICENSE]()
+[LICENSE](https://github.com/AlexWanyoike/Djangoweekone/blob/3f85620559cc49728fe8b5bdcfb5c2045f60bf4f/LICENSE)
 
 (C) Copyright 2021 Alex Wanyoike
