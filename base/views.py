@@ -10,12 +10,16 @@ def base(request):
     
 
     location = request.GET.get('location')
+    
+
     if location == None:
         photo = Photo.objects.all()
     else:
         photo = Photo.objects.filter(location__name=location)
 
     locations = Location.objects.all()
+
+   
 
     category = request.GET.get('category')
     
@@ -40,6 +44,8 @@ def create(request):
 
     context = {'categories': categories, 'locations': locations}
     return render(request , 'base/base.html', context)
+
+
 
 
 
